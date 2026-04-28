@@ -39,7 +39,8 @@ The important programs in FlipFHE are as follows:
 - FlipFHE-image-Multiple-bitflips.cpp: In the image sharpening task using the CKKS scheme, generating 100 sets of random multiple-bit flips, performing multiple-bit flips, and the highest bit flip, respectively.
 - FlipFHE-poly.cpp: In the polynomial evaluation ($3.14x^3 + 0.4x + 1$) task using the CKKS scheme, each coefficient of each polynomial of the ciphertext is flipped bit by bit to obtain the complete ciphertext error information.
 - FlipFHE-poly-overhead.cpp: In the polynomial evaluation task using the CKKS scheme, obtain the size of the ciphertext and store it.
-- FlipFHE-BFV.cpp: In the polynomial evaluation ($4(x^2+1)(x+1)^2$) task using the BFV scheme, 
+- FlipFHE-BFV.cpp: In the polynomial evaluation ($4(x^2+1)(x+1)^2$) task using the BFV scheme, each coefficient of each polynomial of the ciphertext is flipped bit by bit to obtain the complete ciphertext error information.
+If you want to use the corresponding file, please rename it to FlipFHE.cpp and then compile it.
 
 
 
