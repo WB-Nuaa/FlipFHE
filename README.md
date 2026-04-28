@@ -51,6 +51,7 @@ The data used in the experiment is located in the `data` folder, as follows:
 - result-scale.7z: Data used for analyzing the impact of scaling factor.
 - overhead_result.zip: Data used for analyzing the performance of communication optimization.
 - Case.7z: Data for CKKS image sharpening, CKKS polynomial evaluation, and BFV polynomial evaluation.
+- images.7z: 100 images used for image sharpening.
 
 
 
