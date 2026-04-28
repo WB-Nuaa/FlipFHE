@@ -48,6 +48,9 @@ If you want to use the corresponding file, please rename it to FlipFHE.cpp and t
 The data used in the experiment are as follows: 
 - bit-level sensitivity analysis.7z: The partial data used for bit-level sensitivity analysis, as all the data is relatively large (approximately 32G). If you want to obtain all the data, you just need to run the `FlipFHE-image.cpp`.
 - Multiflip-singleflip.zip: The results of 100 sets of random multiple-bit flips and highest-bit flips.
+- result-scale.7z: Data used for analyzing the impact of scaling factor.
+- overhead_result.zip: Data used for analyzing the performance of communication optimization.
+- Case.7z: Data for CKKS image sharpening, CKKS polynomial evaluation, and BFV polynomial evaluation.
 
 
 
