@@ -44,6 +44,13 @@ The important programs in FlipFHE are as follows:
 
 If you want to use the corresponding file, please rename it to FlipFHE.cpp and then compile it.
 
+## Experimental Data
+The data used in the experiment are as follows: 
+- bit-level sensitivity analysis.7z: The partial data used for bit-level sensitivity analysis, as all the data is relatively large (approximately 32G). If you want to obtain all the data, you just need to run the `FlipFHE-image.cpp`.
+- Multiflip-singleflip.zip: The results of 100 sets of random multiple-bit flips and highest-bit flips.
+
+
+
 
 
 
