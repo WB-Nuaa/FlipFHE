@@ -40,6 +40,7 @@ The important programs in FlipFHE are as follows:
 - FlipFHE-poly.cpp: In the polynomial evaluation ($3.14x^3 + 0.4x + 1$) task using the CKKS scheme, each coefficient of each polynomial of the ciphertext is flipped bit by bit to obtain the complete ciphertext error information.
 - FlipFHE-poly-overhead.cpp: In the polynomial evaluation task using the CKKS scheme, obtain the size of the ciphertext and store it.
 - FlipFHE-BFV.cpp: In the polynomial evaluation ($4(x^2+1)(x+1)^2$) task using the BFV scheme, each coefficient of each polynomial of the ciphertext is flipped bit by bit to obtain the complete ciphertext error information.
+- CIFAR-10.py: Reading the images from the CIFAR-10 benchmark and saving them as `.npy` files.
 
 If you want to use the corresponding file, please rename it to FlipFHE.cpp and then compile it.
 
