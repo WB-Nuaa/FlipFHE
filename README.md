@@ -34,8 +34,8 @@ This way, an executable file named CKKS can be obtained:
 
 ## Important Programs
 The important programs in FlipFHE are as follows:
-- FlipFHE-image.cpp:  In the image sharpening task, each coefficient of each polynomial of the ciphertext is flipped bit by bit to obtain the complete ciphertext error information. In addition, experiments with different scaling factors are also included in this program. Just need to modify the corresponding scaling factor, i.e., `scale_size`. And the '/home/qemu/SEAL/SEAL/native/CKKS/data.npy' is the numerical file of the image, which needs to be modified to your corresponding address.
-- 
+- FlipFHE-image.cpp:  In the image sharpening task, each coefficient of each polynomial of the ciphertext is flipped bit by bit to obtain the complete ciphertext error information. In addition, experiments with different scaling factors are also included in this program. Just need to modify the corresponding scaling factor, i.e., `scale_size`. And the `/home/qemu/SEAL/SEAL/native/CKKS/data.npy` is the numerical file of the image, which needs to be modified to your corresponding address. The `/home/qemu/SEAL/SEAL/native/CKKS/result` is the storage address of the decrypted data and also needs to be modified.
+-  
 - 
 
 
