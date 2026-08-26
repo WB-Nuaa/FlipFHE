@@ -1,6 +1,6 @@
-# One Bit Is Enough: Catastrophic Decryption Precision Loss in Fully Homomorphic Encryption
+# From Bit Flips to Precision Loss: Characterizing and Mitigating Fault Effects in CKKS Ciphertexts
 
-It allows controlled fault injection (i.e., bit flips) during FHE evaluation operations, aiming to minimize the mean squared error (MSE) of the decrypted ciphertext relative to that obtained without fault injection.
+It allows controlled fault injection (i.e., bit flips) during CKKS evaluation operations, aiming to characterize the impact of single-bit and multiple-bit flips on the CKKS scheme.
 In this repository, we provide the source code, configuration files, requirements, and partial data.
  
 ## Setup
@@ -34,24 +34,28 @@ This way, an executable file named CKKS can be obtained:
 
 ## Important Programs
 The important programs in FlipFHE are as follows:
-- FlipFHE-image.cpp: In the image sharpening task using the CKKS scheme, each coefficient of each polynomial of the ciphertext is flipped bit by bit to obtain the complete ciphertext error information. In addition, experiments with different scaling factors are also included in this program. Just need to modify the corresponding scaling factor, i.e., `scale_size`. And the `/home/qemu/SEAL/SEAL/native/CKKS/data.npy` is the numerical file of the image, which needs to be modified to your corresponding address. The `/home/qemu/SEAL/SEAL/native/CKKS/result` is the storage address of the decrypted data and also needs to be modified.
-- FlipFHE-image-overhead.cpp: In the image sharpening task using the CKKS scheme, obtaining the size of the ciphertext and storing it in `/home/qemu/SEAL/SEAL/native/CKKS/origin.txt` and `/home/qemu/SEAL/SEAL/native/CKKS/flip.txt`. Next, we iterate over each coefficient and change its low bits to 0, storing the changed data in `/home/qemu/SEAL/SEAL/native/CKKS/result1.seal`.
+- FlipFHE-image.cpp: In the image sharpening task using the CKKS scheme, each coefficient of each polynomial of the ciphertext is flipped bit by bit to obtain the complete ciphertext error information. In addition, experiments with different scaling factors are also included in this program. Just need to modify the corresponding scaling factor, i.e., `scale_size`. And `/home/qemu/SEAL/SEAL/native/CKKS/data.npy` is the numerical file of the image, which needs to be modified to your corresponding address. The `/home/qemu/SEAL/SEAL/native/CKKS/result` is the storage address of the decrypted data and also needs to be modified.
+- FlipFHE-image-overhead.cpp: In the image sharpening task using the CKKS scheme, obtain the size of the ciphertext and store it in `/home/qemu/SEAL/SEAL/native/CKKS/origin.txt` and `/home/qemu/SEAL/SEAL/native/CKKS/flip.txt`. Next, we iterate over each coefficient and change its low bits to 0, storing the changed data in `/home/qemu/SEAL/SEAL/native/CKKS/result1.seal`.
 - FlipFHE-image-Multiple-bitflips.cpp: In the image sharpening task using the CKKS scheme, generating 100 sets of random multiple-bit flips, performing multiple-bit flips, and the highest bit flip, respectively.
 - FlipFHE-poly.cpp: In the polynomial evaluation ($3.14x^3 + 0.4x + 1$) task using the CKKS scheme, each coefficient of each polynomial of the ciphertext is flipped bit by bit to obtain the complete ciphertext error information.
 - FlipFHE-poly-overhead.cpp: In the polynomial evaluation task using the CKKS scheme, obtain the size of the ciphertext and store it.
+- FlipFHE-resnet-100.cpp: In the ResNet18 classification task, deploy the linear classification workload head of the pretrained ResNet18 using CKKS and use 100 CIFAR-10 images (in the `Data/Resnet18` folder) to evaluate the classification effectiveness.
+- FlipFHE-is-detection.cpp/FlipFHE-poly-detection.cpp/FlipFHE-resnet-detection.cpp: Using the check-slot mechanism to detect bit flips. 
 - FlipFHE-BFV.cpp: In the polynomial evaluation ($4(x^2+1)(x+1)^2$) task using the BFV scheme, each coefficient of each polynomial of the ciphertext is flipped bit by bit to obtain the complete ciphertext error information.
 - CIFAR-10.py: Reading the images from the CIFAR-10 benchmark and saving them as `.npy` files.
 
 If you want to use the corresponding file, please rename it to FlipFHE.cpp and then compile it.
 
 ## Experimental Data
-The data used in the experiment is located in the `data` folder, as follows: 
+The data used in the experiment is located in the `Data` folder, as follows: 
 - bit-level sensitivity analysis.7z: The partial data used for bit-level sensitivity analysis, as all the data is relatively large (approximately 32G). If you want to obtain all the data, you just need to run the `FlipFHE-image.cpp`.
 - Multiflip-singleflip.zip: The results of 100 sets of random multiple-bit flips and highest-bit flips.
-- result-scale.7z: Data used for analyzing the impact of scaling factor.
+- result-scale.7z: Data used for analyzing the impact of the scaling factor.
 - overhead_result.zip: Data used for analyzing the performance of communication optimization.
 - Case.7z: Data for CKKS image sharpening, CKKS polynomial evaluation, and BFV polynomial evaluation.
 - images.7z: 100 images used for image sharpening.
+- Resnet18/images_png.zip: 100 images used for image classification.
+- Resnet18/Resnet_weight.py: Obtaining the weights and bias of linear classification layer.
 
 
 
