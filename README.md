@@ -1,4 +1,4 @@
-# From Bit Flips to Precision Loss: Characterizing and Mitigating Fault Effects in CKKS Ciphertexts
+# From Bit Flips to Precision Loss: Characterizing Fault Effects in CKKS Ciphertexts
 
 It allows controlled fault injection (i.e., bit flips) during CKKS evaluation operations, aiming to characterize the impact of single-bit and multiple-bit flips on the CKKS scheme.
 In this repository, we provide the source code, configuration files, requirements, and partial data.
